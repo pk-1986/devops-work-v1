@@ -1,0 +1,16 @@
+name: My First Workflow
+on: [push] # Event that triggers the workflow
+
+jobs:
+  my_first_job: # Unique ID for the job
+    name: Greetings Program # Display name for the job
+    runs-on: ubuntu-latest # Runner environment
+
+    steps:
+      - name: Checkout repository # Step to get the code
+        uses: actions/checkout@v4
+
+      - name: Run a simple script # Step to execute commands
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "This workflow is running on ${{ runner.os }}"
